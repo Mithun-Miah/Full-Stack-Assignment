@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Algorithm solve class 08</title>
+</head>
+<body>
+
+    <script>
+        // nije nijeke call korbe  - infi......n
+        // base case -> condition   -  
+
+        // function Rec_Fun(n){//2 
+        //      if(n==1){
+        //         return 1;
+        //      }
+        //      else{
+        //        return n * Rec_Fun(n-1); // 4 * 3 Rec_fun(4-1); // 3 * rec(2)
+        //      }                          // 2* 1
+        //                                //    1
+
+                                       // 4 Rec_Fun(3)  // 4* 6 = 24
+
+                                       // 3 Rec_fun(2)  // 3*2 
+                                       //  2 Rec_fun(1);  2*1 
+                                       // return  1
+
+
+    //     }
+    //   var x =   Rec_Fun(4); 
+    //     document.write(x);
+  // sorting data 
+    // var num1 = [10,2,1,4,20];  // 1,2,4,10,20
+    // var temp ,i,j;
+     
+    //   for(i=0;i<num1.length;i++){
+    //       for(j=i+1;j<num1.length;j++){
+    //         if(num1[i]>num1[j]){
+    //             temp = num1[i]; 
+    //             num1[i] = num1[j];
+    //             num1[j]=temp;
+    //         }
+    //       }
+    //   }
+    //   for(i=0;i<num1.length;i++){
+    //     document.write(num1[i]);
+    //   }
+//bubble sort algorithm 
+
+//     var num = [ 10,2,20,1,8];
+//       var i,j,tmp ;
+//       for(i=0;i<num.length;i++){ // i = 1
+//          for(j=0;j<num.length - i-1 ; j++){ // 5 - 1 - 1  = 3 
+//                //10 > 2
+//             if(num[j] >num[j+1]){
+//                 tmp = num[j]; // temp =  10
+//                 num[j]= num[j+1] // num j = 2
+//                 num[j+1] = tmp //  numj+1 = 10
+
+//             }
+//          }
+//       }
+
+
+//    for(i=0;i<num.length;i++){
+//        document.write(num[i]);
+//    }
+    
+// binary search 
+
+
+   function Binary(Arr,Items){
+       var i,j,tmp ;
+       for(i=0;i<Arr.length;i++){
+         for(j=0;j<Arr.length - i-1 ; j++){  
+              
+            if(Arr[j] >Arr[j+1]){
+                tmp = Arr[j]; // temp =  10
+                Arr[j]= Arr[j+1] // num j = 2
+                Arr[j+1] = tmp //  numj+1 = 10
+
+            }
+         }
+      }
+
+      document.write("after sorted ");
+   for(i=0;i<Arr.length;i++){
+       document.write(Arr[i]);
+   }
+   
+    var start = 0 ;
+    var end = Arr.length-1 ;
+   var middle ;
+     while(start<=end){
+       middle = Math.floor((start+end)/2);
+
+       if(Arr[middle]==Items){
+           return middle ;
+       }             
+       else if(Arr[middle]<Items){
+             start = middle+1 ;
+       }
+       else{
+        end = middle-1 ;
+       }
+     }
+     return -1 ;
+
+
+   }
+
+   var num1 = [10,2,1,5,3,6,4];
+   var data = -10;
+  var x =  Binary(num1,data);
+
+  document.write("X ="+x);
+    var pos = -1 ;
+
+    if(x==pos){
+        document.write("<br> items not found");
+    }
+    else{
+        document.write("<br> items found");
+    }
+  
+   
+
+    </script>
+</body>
+</html>
